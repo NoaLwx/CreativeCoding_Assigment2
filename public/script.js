@@ -2,7 +2,7 @@ document.body.style.margin   = 0
 document.body.style.overflow = `hidden`
 
 const cnv = document.getElementById (`cnv_element`)
-cnv.width = cnv.parentNode.scrollWidth;
+cnv.width = 800;
 cnv.height = (cnv.width * 9) / 16;
 
 
