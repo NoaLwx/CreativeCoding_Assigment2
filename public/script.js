@@ -36,6 +36,7 @@ img.onload = () => {
 // 
 img.src = `me.jpg`;
 
+
 const audio_context = new AudioContext ()
 
 // I put this in as a test, not planning to use all of this code.
@@ -147,11 +148,11 @@ cnv.onpointermove = e => {
 
     // as the cursor goes from left to right
     // len gos from 0 to 5
-    len = 5 * e.offsetX / cnv_0.width
+    len = 5 * e.offsetX / cnv.width
 
     // as the cursor goes from bottom to top
     // period goes from 420 to 20 (milliseconds)
-    period = 20 + ((e.offsetY / cnv_0.height) ** 2) * 400
+    period = 20 + ((e.offsetY / cnv.height) ** 2) * 400
 }
 
 // this function handles the mouse event
