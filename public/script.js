@@ -159,7 +159,7 @@ cnv.onpointermove = e => {
 
     // as the cursor goes from bottom to top
     // period goes from 420 to 20 (milliseconds)
-    period = 20 + ((e.offsetY / cnv.height) ** 2) * 400
+    period = 20 + ((e.offsetY / cnv.height) ** 2) * 40
 }
 
 // this function handles the mouse event
