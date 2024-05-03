@@ -1,7 +1,7 @@
 document.body.style.margin   = 0
 document.body.style.overflow = `hidden`
 
-import { PixelSorter } from "sort_pixel.js"
+import { PixelSorter } from "./sort_pixel.js"
 
 const cnv = document.getElementById (`cnv_element`)
 cnv.width = 800;
@@ -18,7 +18,7 @@ const sorter = new PixelSorter(ctx);
     cnv.height = cnv.width * (img.height / img.width);
     ctx.drawImage(img, 0, 0, cnv.width, cnv.height);
     window.imageData = ctx.getImageData (0, 0, cnv.width, cnv.height);
-    
+
   };
 
 img.src = `me.jpg`;
