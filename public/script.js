@@ -141,9 +141,15 @@ function note_player () {
 // this function handles the mouse event
 // when the cursor enters the canvas
 cnv.onpointerenter = e => {
+    if (audio_context.state != 'running'){
 
     // set running to true
-    running = true
+    running = true;
+    }
+
+    else if (audio_context.state = 'running'){
+    running = false;
+    }
 
     // initiate the recurseive note_player function
     note_player ()
@@ -155,7 +161,7 @@ cnv.onpointermove = e => {
 
     // as the cursor goes from left to right
     // len gos from 0 to 5
-    len = 5 * e.offsetX / cnv.width
+    len = 2 * e.offsetX / cnv.width
 
     // as the cursor goes from bottom to top
     // period goes from 420 to 20 (milliseconds)
