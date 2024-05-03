@@ -7,11 +7,10 @@ randNumber (min,max){
   return Math.random() * (max - min +1) + min;
 }
 init () {
-    this.width = this.ctx.canvas.width
-    this.height = this.ctx.canvas.height
-    this.img_data = this.ctx.getImageData (0, 0, this.width, this.height).data
-    console.log (this.img_data)
- }
+       this.width = this.ctx.canvas.width
+       this.height = this.ctx.canvas.height
+       this.img_data = this.ctx.getImageData (0, 0, this.width, this.height).data
+    }
 
 sortPixels(e) {
     const pixels = imageData.data;
