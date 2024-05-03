@@ -58,7 +58,7 @@ let running = false
 
 // declaring a mutable variable for 
 // the period of time between notes
-let period = 200
+let period = 30
 
 // declaring a mutable variable for
 // the length of the note
