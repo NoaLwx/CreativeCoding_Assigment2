@@ -18,7 +18,7 @@ const ctx = cnv.getContext(`2d`);
   };
 
 
-img.src = `/w5/catnada.png`;
+img.src = `me.jpg`;
 
 function randNumber (min,max){
   return Math.random() * (max - min +1) + min;
