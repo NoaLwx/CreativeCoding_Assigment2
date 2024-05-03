@@ -170,16 +170,6 @@ cnv.onpointerleave = e => {
     running = false
 }
 
-cnv.onclick = () =>{
-   if (audio_context.state != 'running'){
-    running = true;
-   }
-
-   else if (audio_context.state = 'running'){
-    running = false
-   }
-}
-
 cnv.addEventListener('mousemove', (e) => {
   sorter.sortPixels(e);
 });
