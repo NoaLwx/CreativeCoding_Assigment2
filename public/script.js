@@ -1,8 +1,6 @@
 document.body.style.margin   = 0
 document.body.style.overflow = `hidden`
 
-// import { PixelSorter } from "sort_pixels.js"
-
 const cnv = document.getElementById (`cnv_element`)
 cnv.width = 800;
 cnv.height = (cnv.width * 9) / 16;
@@ -10,16 +8,14 @@ cnv.height = (cnv.width * 9) / 16;
 
 const ctx = cnv.getContext(`2d`);
 
-// const sorter = new PixelSorter(ctx);
-
-
   const img = new Image();
   img.onload = () => {
     cnv.height = cnv.width * (img.height / img.width);
     ctx.drawImage(img, 0, 0, cnv.width, cnv.height);
     window.imageData = ctx.getImageData (0, 0, cnv.width, cnv.height);
-
+    // sortPixels();
   };
+
 
 img.src = `me.jpg`;
 
