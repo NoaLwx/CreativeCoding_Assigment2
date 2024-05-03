@@ -1,7 +1,7 @@
 document.body.style.margin   = 0
 document.body.style.overflow = `hidden`
 
-import { PixelSorter } from "../sort_pixel.js"
+import { PixelSorter } from "/public/sort_pixel.js"
 
 const cnv = document.getElementById (`cnv_element`)
 cnv.width = 800;
