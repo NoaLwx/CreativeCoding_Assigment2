@@ -141,15 +141,9 @@ function note_player () {
 // this function handles the mouse event
 // when the cursor enters the canvas
 cnv.onpointerenter = e => {
-    if (audio_context.state != 'running'){
 
     // set running to true
     running = true;
-    }
-
-    else if (audio_context.state = 'running'){
-    running = false;
-    }
 
     // initiate the recurseive note_player function
     note_player ()
@@ -174,6 +168,16 @@ cnv.onpointerleave = e => {
 
     // set running to false
     running = false
+}
+
+cnv.onclick = () =>{
+   if (audio_context.state != 'running'){
+    running = true;
+   }
+
+   else if (audio_context.state = 'running'){
+    running = false
+   }
 }
 
 cnv.addEventListener('mousemove', (e) => {
