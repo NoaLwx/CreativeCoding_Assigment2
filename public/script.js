@@ -38,8 +38,6 @@ img.src = `me.jpg`;
 
 
 
-
-
 const audio_context = new AudioContext ()
 
 function init_audio() {
@@ -50,7 +48,7 @@ function init_audio() {
 
 // I put this in as a test, not planning to use all of this code.
 // array of notes for the sounds
-const notes = [ 62, 66, 69, 73, 74, 73, 69, 66 ]
+const notes = [ 69, 73 ]
 
 // declaring a mutable iterator
 let i = 0
