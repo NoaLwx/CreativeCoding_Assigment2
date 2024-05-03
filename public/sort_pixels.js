@@ -11,7 +11,6 @@ randNumber (min,max){
 init () {
        this.width = this.ctx.canvas.width
        this.height = this.ctx.canvas.height
-       img_data = this.ctx.getImageData (0, 0, this.width, this.height).data
     }
 
 sortPixels(e) {
