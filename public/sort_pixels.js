@@ -1,6 +1,8 @@
-export class PixelSorter{
-    constructor(ctx){
-        this.ctx = ctx
+class PixelSorter{
+    constructor(cnv,ctx){
+        this.cnv = cnv;
+        this.ctx = ctx;
+        // this.imageData = this.cnv.createImageData(this.cnv.width, this.cnv.height);
     }
 
 randNumber (min,max){
@@ -17,8 +19,8 @@ sortPixels(e) {
     
     let areaX = e.clientX; // Current mouse X position
     let areaY = e.clientY; // Current mouse Y position
-    let areaWidth = randNumber (20,50); // Width of the area
-    let areaHeight = randNumber (100,200); // Height of the area
+    let areaWidth = this.randNumber (20,50); // Width of the area
+    let areaHeight = this.randNumber (100,200); // Height of the area
      
     // Calculate the start and end indices for x and y
     let startX = areaX;
@@ -28,12 +30,12 @@ sortPixels(e) {
   
     for (let y = startY; y < endY; y++){
       for (let x = startX ; x < endX; x++){
-       const index = (y * cnv.width + x) * 4;
+       const index = (y * this.cnv.width + x) * 4;
        const brightness = pixels[index] + pixels[index + 1] + pixels[index + 2];
   
   // Get the brightness of the pixel below
    if (y + 1 < endY) {
-    const indexBelow = ((y + 1) * cnv.width + x) * 4 ;
+    const indexBelow = ((y + 1) * this.cnv.width + x) * 4 ;
     const brightnessBelow = pixels[indexBelow] + pixels[indexBelow + 1] + pixels[indexBelow + 2];
   
     if (brightness < brightnessBelow) {
@@ -46,7 +48,7 @@ sortPixels(e) {
       }
     }
   }
-   ctx.putImageData(imageData, 0, 0);
+   this.ctx.putImageData(imageData, 0, 0);
   }
 
 }
