@@ -3,9 +3,11 @@ document.body.style.overflow = `hidden`
 
 const cnv = document.getElementById (`cnv_element`)
 cnv.width = cnv.parentNode.scrollWidth;
-  cnv.height = (cnv.width * 9) / 16;
+cnv.height = (cnv.width * 9) / 16;
+document.body.appendChild (cnv)
 
-  const ctx = cnv.getContext(`2d`);
+
+const ctx = cnv.getContext(`2d`);
 
   const img = new Image();
   img.onload = () => {
