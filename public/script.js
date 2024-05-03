@@ -46,6 +46,7 @@ function init_audio() {
     if (!audio_context) {
         audio_context = new (window.AudioContext || window.webkitAudioContext)();
     }
+}
 
 // I put this in as a test, not planning to use all of this code.
 // array of notes for the sounds
