@@ -1,6 +1,15 @@
 document.body.style.margin   = 0
 document.body.style.overflow = `hidden`
 
+// I created this pixel sorter funciton inspired by Sabato Visconti's pixelsorted photos.
+// https://www.sabatobox.com/pixel-sorting-experiments
+// the photos have really cool pixel sorter area
+// Changing a bit of variable and trial and error, I made this pixel sorter destroy function.
+// I can manipulate the glitch myself but still shows the chaos 
+// by adverting the user's expectation of the mouse control
+// The pixel sorter is on a different side of the where the pointer is, 
+// making it more unexpected and more zany.
+
 // calling the canvas from index file using Id name
 const cnv = document.getElementById (`cnv_element`);
 
@@ -8,45 +17,48 @@ const cnv = document.getElementById (`cnv_element`);
 cnv.width = document.body.parentNode.scrollWidth;
 cnv.height = (cnv.width * 9) / 16;
 
-// 
+// getting the canvas context
 const ctx = cnv.getContext(`2d`);
 
 // calling the pixelsorter class in
 const sorter = new PixelSorter(cnv,ctx);
 
-// 
+// creating the image
 const img = new Image();
 
-// 
+// calling in the image
 img.onload = () => {
 
-  // 
+  // size of the image 
   cnv.height = cnv.width * (img.height / img.width);
 
-  // 
+  // drawing the image
   ctx.drawImage(img, 0, 0, cnv.width, cnv.height);
 
-  // 
+  // getting the image data
   window.imageData = ctx.getImageData (0, 0, cnv.width, cnv.height);
 
-  // 
+  // calling the pixel sorter's canvas in with their own dimension
   sorter.init();
   };
 
-// 
+// give filepath to the image
 img.src = `stream.png`;
 
 
+// audio context for the sound using midi notes
+// I referenced the tutorial post on Thomas's blog (https://blog.science.family/240320_web_audio_api_synths)
 
+// create a new audio context for the canvas
 const audio_context = new AudioContext ()
 
+// getting the audio context function
 function init_audio() {
     if (!audio_context) {
         audio_context = new (window.AudioContext || window.webkitAudioContext)();
     }
 }
 
-// I put this in as a test, not planning to use all of this code.
 // array of notes for the sounds
 const notes = [60, 67, 71, 65 ]
 
@@ -170,6 +182,9 @@ cnv.onpointerleave = e => {
     running = false
 }
 
+// function that handles the mouse event 
+// when cursor enters the canvas
+// it will call the sortPixels function from the sorter
 cnv.addEventListener('mousemove', (e) => {
   sorter.sortPixels(e);
 });
