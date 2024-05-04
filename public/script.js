@@ -48,7 +48,7 @@ function init_audio() {
 
 // I put this in as a test, not planning to use all of this code.
 // array of notes for the sounds
-const notes = [ 69, 73, 76 ]
+const notes = [60, 67, 71, 65 ]
 
 // declaring a mutable iterator
 let i = 0
