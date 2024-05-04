@@ -5,7 +5,7 @@ document.body.style.overflow = `hidden`
 const cnv = document.getElementById (`cnv_element`);
 
 // setting the size of the canvas
-cnv.width = 800;
+cnv.width = document.parentNode.scrollWidth;
 cnv.height = (cnv.width * 9) / 16;
 
 // 
