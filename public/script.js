@@ -34,7 +34,7 @@ img.onload = () => {
   };
 
 // 
-img.src = `me.jpg`;
+img.src = `forest.png`;
 
 
 
